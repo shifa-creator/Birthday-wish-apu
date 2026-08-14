@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday, Priyo Apu 💙</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;600;700&family=Noto+Sans+Bengali:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --blue:#1769e0;
+    --deep-blue:#0a3d91;
+    --red:#e3344f;
+    --text:#4c5665;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+
+    font-family:"Noto Sans Bengali",sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(23,105,224,.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(227,52,79,.10),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #edf5ff,
+            #ffffff 50%,
+            #f8fbff
+        );
+
+    color:var(--text);
+}
+
+
+/* ===================================
+   FLOATING HEARTS
+=================================== */
+
+.love{
+    position:fixed;
+    bottom:-60px;
+
+    color:var(--blue);
+
+    font-size:20px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:1;
+
+    animation:floatLove linear infinite;
+}
+
+.love.red{
+    color:var(--red);
+}
+
+@keyframes floatLove{
+
+    0%{
+        transform:
+            translateY(0)
+            translateX(0)
+            rotate(0deg)
+            scale(.7);
+
+        opacity:0;
+    }
+
+    15%{
+        opacity:.75;
+    }
+
+    50%{
+        transform:
+            translateY(-50vh)
+            translateX(25px)
+            rotate(12deg)
+            scale(1);
+    }
+
+    100%{
+        transform:
+            translateY(-115vh)
+            translateX(-25px)
+            rotate(-12deg)
+            scale(1.15);
+
+        opacity:0;
+    }
+}
+
+
+/* ===================================
+   ENVELOPE SCREEN
+=================================== */
+
+.envelope-screen{
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+
+    z-index:50;
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.envelope-screen.hide{
+    opacity:0;
+
+    transform:scale(1.12);
+
+    pointer-events:none;
+}
+
+.envelope-box{
+    text-align:center;
+
+    cursor:pointer;
+}
+
+
+/* Envelope */
+
+.envelope{
+    width:310px;
+    height:205px;
+
+    position:relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #2779e8,
+            #0a3d91
+        );
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 25px 70px rgba(10,61,145,.25);
+
+    transition:.35s;
+}
+
+.envelope-box:hover .envelope{
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 30px 80px rgba(10,61,145,.32);
+}
+
+
+/* Envelope flap */
+
+.flap{
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:0;
+    height:0;
+
+    border-left:155px solid transparent;
+    border-right:155px solid transparent;
+
+    border-top:115px solid #3c89ef;
+
+    z-index:5;
+}
+
+
+/* Bottom folds */
+
+.bottom-left{
+    position:absolute;
+
+    bottom:0;
+    left:0;
+
+    width:0;
+    height:0;
+
+    border-left:155px solid #0e4da4;
+    border-top:105px solid transparent;
+
+    z-index:4;
+}
+
+.bottom-right{
+    position:absolute;
+
+    bottom:0;
+    right:0;
+
+    width:0;
+    height:0;
+
+    border-right:155px solid #082f70;
+    border-top:105px solid transparent;
+
+    z-index:4;
+}
+
+
+/* Seal */
+
+.seal{
+    position:absolute;
+
+    left:50%;
+    top:95px;
+
+    transform:translateX(-50%);
+
+    width:61px;
+    height:61px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:28px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.18);
+
+    z-index:10;
+
+    transition:.3s;
+}
+
+.envelope-box:hover .seal{
+    transform:
+        translateX(-50%)
+        scale(1.1);
+}
+
+
+/* Opening text */
+
+.open-text{
+    margin-top:25px;
+
+    font-family:"Playfair Display",serif;
+
+    color:var(--deep-blue);
+
+    font-size:18px;
+
+    letter-spacing:.5px;
+}
+
+.open-text span{
+    display:block;
+
+    margin-top:7px;
+
+    font-family:"Noto Sans Bengali",sans-serif;
+
+    color:var(--red);
+
+    font-size:14px;
+}
+
+
+/* ===================================
+   MAIN PAGE
+=================================== */
+
+.page{
+    width:100%;
+
+    min-height:100vh;
+
+    padding:60px 15px;
+
+    display:flex;
+    justify-content:center;
+
+    opacity:0;
+
+    transform:
+        translateY(40px)
+        scale(.96);
+
+    pointer-events:none;
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.page.show{
+    opacity:1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    pointer-events:auto;
+}
+
+
+/* ===================================
+   CARD
+=================================== */
+
+.card{
+    width:min(94%,540px);
+
+    min-height:700px;
+
+    padding:42px 30px 38px;
+
+    position:relative;
+
+    background:
+        rgba(255,255,255,.95);
+
+    border-radius:30px;
+
+    border:1px solid rgba(255,255,255,.95);
+
+    box-shadow:
+        0 30px 80px rgba(10,61,145,.16),
+        0 8px 30px rgba(227,52,79,.06);
+
+    text-align:center;
+
+    overflow:hidden;
+}
+
+
+/* Top line */
+
+.card::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+    right:0;
+
+    height:4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue),
+            #6da5ff,
+            var(--red)
+        );
+}
+
+
+/* subtle corner glow */
+
+.card::after{
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(23,105,224,.08),
+            transparent 70%
+        );
+
+    top:-110px;
+    right:-100px;
+
+    pointer-events:none;
+}
+
+
+/* ===================================
+   TITLE
+=================================== */
+
+.small-title{
+    font-family:"Playfair Display",serif;
+
+    color:var(--blue);
+
+    font-size:12px;
+
+    letter-spacing:3px;
+
+    margin-bottom:8px;
+}
+
+h1{
+    font-family:"Playfair Display",serif;
+
+    font-size:
+        clamp(38px,9vw,51px);
+
+    font-weight:600;
+
+    color:var(--deep-blue);
+
+    line-height:1.15;
+}
+
+
+/* Priyo Apu */
+
+.apu{
+    margin-top:3px;
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:50px;
+
+    color:var(--red);
+
+    line-height:1.25;
+}
+
+
+/* ===================================
+   SIMPLE DECORATIVE LABEL
+=================================== */
+
+.special-label{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin:
+        20px
+        auto
+        18px;
+
+    padding:
+        9px 20px;
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #edf5ff,
+            #ffffff
+        );
+
+    border:
+        1px solid rgba(23,105,224,.14);
+
+    color:var(--deep-blue);
+
+    font-size:15px;
+
+    box-shadow:
+        0 8px 22px rgba(23,105,224,.07);
+}
+
+.special-label .blue{
+    color:var(--blue);
+    font-size:19px;
+}
+
+.special-label .red{
+    color:var(--red);
+    font-size:17px;
+}
+
+
+/* ===================================
+   CAKE
+=================================== */
+
+.cake{
+    font-size:58px;
+
+    margin:
+        5px
+        0
+        17px;
+
+    animation:cakeFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes cakeFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-6px);
+    }
+}
+
+
+/* ===================================
+   MESSAGE
+=================================== */
+
+.message{
+    max-width:440px;
+
+    margin:auto;
+
+    font-size:16px;
+
+    line-height:2;
+
+    color:var(--text);
+}
+
+.message strong{
+    color:var(--blue);
+
+    font-weight:600;
+}
+
+
+/* Divider */
+
+.divider{
+    width:75px;
+    height:2px;
+
+    margin:20px auto;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue),
+            var(--red)
+        );
+}
+
+
+/* Wish */
+
+.wish{
+    max-width:430px;
+
+    margin:auto;
+
+    font-size:15px;
+
+    line-height:1.9;
+
+    color:#687386;
+}
+
+
+/* ===================================
+   DUA BOX
+=================================== */
+
+.dua{
+    margin-top:21px;
+
+    padding:
+        18px
+        17px;
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(23,105,224,.055),
+            rgba(227,52,79,.045)
+        );
+
+    border-left:
+        3px solid var(--blue);
+
+    border-right:
+        3px solid var(--red);
+
+    font-size:14px;
+
+    line-height:1.9;
+
+    color:#596474;
+}
+
+.dua strong{
+    color:var(--red);
+}
+
+
+/* ===================================
+   ENDING
+=================================== */
+
+.ending{
+    margin-top:25px;
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:30px;
+
+    color:var(--blue);
+}
+
+.footer{
+    margin-top:4px;
+
+    font-family:"Playfair Display",serif;
+
+    font-style:italic;
+
+    font-size:14px;
+
+    color:#9aa4b3;
+}
+
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media(max-width:600px){
+
+    .page{
+        padding:
+            35px
+            10px
+            45px;
+    }
+
+    .card{
+        width:96%;
+
+        padding:
+            35px
+            19px
+            30px;
+
+        border-radius:25px;
+    }
+
+    .envelope{
+        width:275px;
+        height:185px;
+    }
+
+    .flap{
+        border-left-width:137px;
+        border-right-width:137px;
+        border-top-width:105px;
+    }
+
+    .bottom-left{
+        border-left-width:137px;
+        border-top-width:95px;
+    }
+
+    .bottom-right{
+        border-right-width:137px;
+        border-top-width:95px;
+    }
+
+    .seal{
+        top:86px;
+    }
+
+    .apu{
+        font-size:44px;
+    }
+
+    .message{
+        font-size:15px;
+        line-height:1.9;
+    }
+
+    .wish{
+        font-size:14px;
+    }
+
+    .dua{
+        font-size:13.5px;
+    }
+
+    .special-label{
+        font-size:14px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =================================
+     FLOATING BLUE + RED HEARTS
+================================= -->
+
+<span class="love"
+style="left:4%;animation-duration:9s;animation-delay:0s;">💙</span>
+
+<span class="love"
+style="left:13%;animation-duration:11s;animation-delay:2s;">💙</span>
+
+<span class="love red"
+style="left:22%;animation-duration:8s;animation-delay:4s;">❤️</span>
+
+<span class="love"
+style="left:32%;animation-duration:10s;animation-delay:1s;">💙</span>
+
+<span class="love"
+style="left:44%;animation-duration:9s;animation-delay:3s;">💙</span>
+
+<span class="love red"
+style="left:56%;animation-duration:11s;animation-delay:5s;">❤️</span>
+
+<span class="love"
+style="left:68%;animation-duration:8s;animation-delay:2s;">💙</span>
+
+<span class="love"
+style="left:79%;animation-duration:10s;animation-delay:4s;">💙</span>
+
+<span class="love red"
+style="left:91%;animation-duration:9s;animation-delay:1s;">❤️</span>
+
+
+<!-- =================================
+     ENVELOPE
+================================= -->
+
+<div
+class="envelope-screen"
+id="envelopeScreen"
+>
+
+    <div
+    class="envelope-box"
+    onclick="openCard()"
+    >
+
+        <div class="envelope">
+
+            <div class="flap"></div>
+
+            <div class="bottom-left"></div>
+
+            <div class="bottom-right"></div>
+
+            <div class="seal">
+                ❤️
+            </div>
+
+        </div>
+
+
+        <div class="open-text">
+
+            A little surprise for you
+
+            <span>
+                💌 খুলে দেখো
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =================================
+     MAIN CARD
+================================= -->
+
+<main
+class="page"
+id="page"
+>
+
+    <section class="card">
+
+
+        <div class="small-title">
+            A SPECIAL WISH FOR YOU
+        </div>
+
+
+        <h1>
+            Happy Birthday
+        </h1>
+
+
+        <div class="apu">
+            Priyo Apu
+        </div>
+
+
+        <div class="special-label">
+
+            <span class="blue">
+                💙
+            </span>
+
+            আমার প্রিয় আপু
+
+            <span class="red">
+                ❤️
+            </span>
+
+        </div>
+
+
+        <div class="cake">
+            🎂
+        </div>
+
+
+        <div class="message">
+
+            জন্মদিনে তোমার জন্য
+            অনেক অনেক শুভকামনা। 🌷
+
+            <br>
+
+            সবসময় ভালো থেকো,
+            হাসিখুশি থেকো—
+            আর জীবনের আনন্দগুলো যেন কখনো
+            কমে না যায়।
+
+            <br><br>
+
+            <strong>
+                তোমার জন্য সবসময়ই
+                ভালো কিছুই চাই। 💙
+            </strong>
+
+        </div>
+
+
+        <div class="divider"></div>
+
+
+        <div class="wish">
+
+            আল্লাহ তোমাকে সবসময়
+            সুস্থ ও ভালো রাখুন।
+
+            <br>
+
+            তোমার জীবনটা শান্তি,
+            সুখ আর বরকতে ভরে উঠুক।
+
+            <br>
+
+            মন থেকে করা প্রতিটি
+            ভালো চাওয়া কবুল হোক। 🤲
+
+        </div>
+
+
+        <div class="dua">
+
+            <strong>
+                অনেক ভালো থেকো,
+                প্রিয় আপু। ❤️
+            </strong>
+
+            <br>
+
+            তোমার মুখের হাসিটা
+            সবসময় এমনই থাকুক।
+
+        </div>
+
+
+        <div class="ending">
+            Happy Birthday, Priyo Apu 💙
+        </div>
+
+
+        <div class="footer">
+            With lots of love, prayers &amp; warm wishes
+        </div>
+
+
+    </section>
+
+</main>
+
+
+<script>
+
+
+/* =================================
+   OPEN CARD
+================================= */
+
+function openCard(){
+
+    const envelope =
+        document.getElementById(
+            "envelopeScreen"
+        );
+
+    const page =
+        document.getElementById(
+            "page"
+        );
+
+
+    envelope.classList.add("hide");
+
+
+    setTimeout(function(){
+
+        page.classList.add("show");
+
+        addExtraHearts();
+
+    },650);
+
+}
+
+
+/* =================================
+   EXTRA HEARTS AFTER OPENING
+================================= */
+
+function addExtraHearts(){
+
+    const hearts=[
+        "💙",
+        "💙",
+        "💙",
+        "❤️"
+    ];
+
+
+    for(
+        let i=0;
+        i<28;
+        i++
+    ){
+
+        setTimeout(function(){
+
+            const heart =
+                document.createElement("span");
+
+
+            heart.className="love";
+
+
+            heart.innerHTML =
+                hearts[
+                    Math.floor(
+                        Math.random()
+                        *
+                        hearts.length
+                    )
+                ];
+
+
+            heart.style.left =
+                Math.random()*100
+                +"vw";
+
+
+            heart.style.fontSize =
+                (
+                    15+
+                    Math.random()*15
+                )
+                +"px";
+
+
+            heart.style.animationDuration =
+                (
+                    5+
+                    Math.random()*5
+                )
+                +"s";
+
+
+            document.body.appendChild(
+                heart
+            );
+
+
+            setTimeout(function(){
+
+                heart.remove();
+
+            },10000);
+
+
+        },i*180);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
